@@ -1,12 +1,23 @@
-.Page-logins {
-    display: flex;
+.Logins-header {
+  background-color: #222;
+  height: 250px;
+  padding: 20px;
+  color: white;
 }
 
+.Page-logins {
+    display: inline-flex;
+    align-items: center;
+}
+.Login-title {
+    font-size: 1.5em;
+  }
 .Logins-buttons {
     background-color: #72708f; /* Green */
     border: none;
     color: white;
     padding: 15px 32px;
+    margin: 5px;
     width: 100px;
     height: 100px;
     text-align: center;
@@ -15,11 +26,12 @@
     font-size: 16px;
 }
 
-.User-logins {
+.User-logins button{
     background-color: #48465c; /* Green */
     border: none;
     color: white;
-    padding: 15px 32px;
+    padding: 10px 15px;
+    margin: 5px;
     width: 200px;
     text-align: center;
     text-decoration: none;
