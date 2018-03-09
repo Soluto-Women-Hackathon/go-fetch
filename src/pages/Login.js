@@ -1,46 +1,63 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import login from '../App';
 import logo from '../resources/logo.svg';
+import forahome_inactive from '../resources/for-a-home-icon-inactive.svg';
+import forahome_active from '../resources/for-a-home-icon-active.svg';
+import toadopt_active from '../resources/to-adopt-icon-active.svg';
+import toadopt_inactive from '../resources/to-adopt-icon-inactive.svg';
+import path from '../resources/path.svg';
 import './Login.css';
 import '../App.css';
 
 class Login extends Component {
+    state = {
+        selectedValue: ''
+    };
      
     render() {
         const onRadioChange = (event) => {
-            this.setState({value: event.target.value});
+            this.setState({selectedValue: event.target.value});
         }
         
       return (      
-        <div>
-            <link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet" />
+        <div align="center">
             <div className="Logins-header">
                 <img src={logo} className="logo" alt="logo"/>
-                <p className="Logins-intro">
+                <div className="Logins-intro">
                     Get to know your next pet friend
-                </p>
-                <p className="LOOKING">Looking...</p>
-            </div>
+                </div>
+                <div className="LOOKING">Looking</div>
             
-            <div className="Logins-footer">
                 <form className="Page-logins">
-                    <label>
-                        <input type="radio" className="ChoosePage" name="Looking" value="Adopt" onChange={onRadioChange} />
-                        <img src="'img/resources/to-adopt-icon-active.svg" />
-                        <div className="TO-ADOPT">To Adopt</div>
-                    </label>
-                    <label>
-                        <input type="radio" className="ChoosePage" name="Looking" value="Owner" onChange={onRadioChange} />
-                        <img src="'../resources/for-a-home-icon-inactive.svg" />
-                        <div className="FOR-A-HOME">For a Home</div>
-                    </label>
+                    <div className="buttonSquare">
+                        <label>
+                            <input type="radio" className="ChoosePage" name="Looking" value="Adopt" onChange={onRadioChange} />
+                            <img src={toadopt_inactive} className="Button-icon" />
+                            <div className="TO-ADOPT">To Adopt</div>
+                        </label>
+                    </div>
+                    <div className="buttonSquare">
+                        <label>
+                            <input type="radio" className="ChoosePage" name="Looking" value="Owner" onChange={onRadioChange} />
+                            <img src={forahome_active} className="Button-icon" />
+                            <div className="FOR-A-HOME">For a Home</div>
+                            <img src={path} />
+                        </label>
+                    </div>
                 </form>
+            
+                    <div className="User-logins">
+                        <Link to={this.state.selectedValue} >Facebook Login</Link>
+                        
+                        {/* <button onClick={() => this.props.loginFacebook(this.props, this.state.value)}>Facebook Login</button> */}
+                    </div>
+                        <br/>
+                    <div className="User-logins">
+                        <Link to={this.state.selectedValue} >Google Login</Link>
+                        {/* <button onClick={() => this.props.loginGoogle(this.props, this.state.value)}>Google Login</button> */}
+                    </div>
             </div>
-            <p className="User-logins">
-                <button onClick={() => this.props.loginFacebook(this.props, this.state.value)}>Facebook Login</button>
-                <br/>
-                <button onClick={() => this.props.loginGoogle(this.props, this.state.value)}>Google Login</button>
-            </p>
         </div>
       );
     }
