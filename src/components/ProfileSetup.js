@@ -4,7 +4,7 @@ import './ProfileSetup.css';
 const Header = ({img, text}) => (
   <div className="profile-setup-header">
     <img src={img} />
-    <div>{text}</div>
+    <div className="profile-setup-header-text">{text.split('\n').map(t => <div>{t}</div>)}</div>
   </div>
 );
 
@@ -34,10 +34,12 @@ class ProfileSetup extends Component {
     return (
       <div className="profile-setup">
         <Header text={header} img={headerImage}/>
-        <div className="profile-setup-page" data-page={page} data-pages-length={pages.length}>
-          { Component && <Component {...this.props} /> }
+        <div className="profile-setup-page-wrapper" data-page={page} data-pages-length={pages.length}>
+          <NextButton text={isLastPage ? 'Finish' : 'Next'} onClick={onClick}/>
+          <div className="profile-setup-page">
+            { Component && <Component {...this.props} /> }
+          </div>
         </div>
-        <NextButton text={isLastPage ? 'Complete' : 'Next'} onClick={onClick}/>
       </div>
     );
   }

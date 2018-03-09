@@ -1,13 +1,14 @@
 import React from 'react';
 import ProfileSetup from '../../components/ProfileSetup';
+import headerImage from '../../resources/to-adopt-title-icon.svg';
 
 const pages = [
   {
-    header: 'Hey future pet owner',
+    header: 'Hey future\npet owner',
     Component: () => 'yeahhh',
   },
   {
-    header: 'What You’re looking for?',
+    header: 'What You’re\nlooking for?',
     Component: () => 'yoooo',
   },
 ];
@@ -15,6 +16,7 @@ const pages = [
 export default () => (
   <ProfileSetup
     pages={pages}
+    headerImage={headerImage}
     onComplete={() => alert('complete')}
   />
 )

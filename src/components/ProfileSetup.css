@@ -1,5 +1,53 @@
+.profile-setup {
+  height: 100vh;
+  overflow-y: auto;
+  background-color: rgba(202, 213, 218, 0.27);
+}
+
 .profile-setup .profile-setup-header {
-  width: 375px;
-  height: 264px;
   background-image: linear-gradient(to bottom, #00d18b, #00a453);
+  display: flex;
+  flex-direction: column;
+  padding: 50px 0;
+}
+
+.profile-setup .profile-setup-header .profile-setup-header-text {
+  font-family: Fredoka One;
+  text-align: center;
+  text-transform: uppercase;
+  color: #ffffff;
+  font-size: 22px;
+  line-height: 1.36;
+  letter-spacing: 0.4px;
+  margin-top: 20px;
+}
+
+.profile-setup .profile-setup-page-wrapper {
+  padding: 0 20px 52px;
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.profile-setup .profile-setup-page {
+  border-radius: 8px;
+  background-color: #ffffff;
+  border: solid 1px rgba(38, 38, 40, 0.06);
+  min-height: 60px;
+  margin: -42px 0;
+}
+
+.profile-setup .profile-setup-next {
+  width: 100%;
+  height: 89px;
+  border: none;
+  border-radius: 35px;
+  background-color: #303843;
+
+  padding-top: 46px;
+  font-size: 14px;
+  line-height: 1.57;
+  letter-spacing: 0.9px;
+  font-family: Fredoka One;
+  text-transform: uppercase;
+  color: #ffffff;
 }
