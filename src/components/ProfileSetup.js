@@ -9,9 +9,9 @@ import './ProfileSetup.css';
 import OwnerProfileBuilder from './OwnerProfileBuilder'
 
 const Header = ({img, text}) => (
-  <div className="profile-setup-header">
+  <div className="header">
     <img src={img} />
-    <div className="profile-setup-header-text">{text.split('\n').map((t, i) => <div key={i}>{t}</div>)}</div>
+    <div className="header-text">{text.split('\n').map((t, i) => <div key={i}>{t}</div>)}</div>
   </div>
 );
 
