@@ -31,31 +31,35 @@ class Login extends Component {
             
                 <form className="Page-logins">
                     <div className="buttonSquare">
-                        <label>
+                        <label className="TO-ADOPT" >
                             <input type="radio" className="ChoosePage" name="Looking" value="Adopt" onChange={onRadioChange} />
-                            <img src={toadopt_inactive} className="Button-icon" />
-                            <div className="TO-ADOPT">To Adopt</div>
+                            <img src={toadopt_active} className="Button-icon" />
+                            <div >To Adopt</div>
                         </label>
                     </div>
                     <div className="buttonSquare">
-                        <label>
+                        <label className="FOR-A-HOME">
                             <input type="radio" className="ChoosePage" name="Looking" value="Owner" onChange={onRadioChange} />
                             <img src={forahome_active} className="Button-icon" />
-                            <div className="FOR-A-HOME">For a Home</div>
-                            <img src={path} />
+                            <div >For a Home</div>
+                            <img src={path} className="buttonTriangle"/>
                         </label>
                     </div>
                 </form>
             
                     <div className="User-logins">
-                        <Link to={this.state.selectedValue} >Facebook Login</Link>
-                        
+                        <div>
+                            <Link to={this.state.selectedValue} >Facebook Login</Link>
+                        </div>
+                        <div></div>
                         {/* <button onClick={() => this.props.loginFacebook(this.props, this.state.value)}>Facebook Login</button> */}
                     </div>
                         <br/>
                     <div className="User-logins">
-                        <Link to={this.state.selectedValue} >Google Login</Link>
+                        <div>
+                            <Link to={this.state.selectedValue} >Google Login</Link>
                         {/* <button onClick={() => this.props.loginGoogle(this.props, this.state.value)}>Google Login</button> */}
+                        </div>
                     </div>
             </div>
         </div>
