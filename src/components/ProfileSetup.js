@@ -18,9 +18,9 @@ class ProfileSetup extends Component {
   };
 
   render() {
-    const {pages, headerImage, headerText, onComplete} = this.props;
+    const {pages, headerImage, onComplete} = this.props;
     const {page} = this.state;
-    const isLastPage = (page === pages.length - 1);
+    const isLastPage = (pages.length === 0 || page === pages.length - 1);
     const onClick = () => {
       if (isLastPage) {
         onComplete();
@@ -28,12 +28,14 @@ class ProfileSetup extends Component {
         this.setState({page: page + 1});
       }
     };
-    const CurrentPage = pages[page];
+
+    const { header, Component} = pages[page] || {};
+
     return (
       <div className="profile-setup">
-        <Header text={headerText} img={headerImage}/>
+        <Header text={header} img={headerImage}/>
         <div className="profile-setup-page" data-page={page} data-pages-length={pages.length}>
-          { CurrentPage && <CurrentPage {...this.props} /> }
+          { Component && <Component {...this.props} /> }
         </div>
         <NextButton text={isLastPage ? 'Complete' : 'Next'} onClick={onClick}/>
       </div>
