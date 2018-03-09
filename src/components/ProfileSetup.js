@@ -6,6 +6,7 @@ import {
 } from 'react-router-dom';
 import { mapProps } from 'recompose';
 import './ProfileSetup.css';
+import OwnerProfileBuilder from './OwnerProfileBuilder'
 
 const Header = ({img, text}) => (
   <div className="profile-setup-header">
@@ -47,7 +48,7 @@ const ProfileSetup = mapProfileProps(({header, button, headerImage, page, pages,
     <div className="profile-setup-page-wrapper" data-page={page} data-pages-length={pages.length}>
       <NextButton text={button} onClick={onClick}/>
       <div className="profile-setup-page">
-        { Component && <Component /> }
+          <OwnerProfileBuilder></OwnerProfileBuilder>
       </div>
     </div>
   </div>
