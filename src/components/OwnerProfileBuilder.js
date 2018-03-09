@@ -41,7 +41,6 @@ class ownerProfileBuilder extends Component {
                     <br/>
                     <label htmlFor="otherAnimals" className={"lable-field"}>Other Animals</label>
                     <br/>
-                    {/*<input type="text" id="otherAnimals" className={"input-field"} name={"otherAnimals"}/>*/}
                     <select name="otherAnimals" id="otherAnimals">
                         {this.animalsOptions}
                     </select>

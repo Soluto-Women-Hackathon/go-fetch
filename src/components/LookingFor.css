@@ -1,0 +1,35 @@
+.lable-field {
+    width: 59px;
+    height: 13px;
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #bebebe;
+    line-height: 30px;
+}
+
+.age-wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px;
+    padding-right: 70px;
+}
+
+.selection{
+    position:relative;
+    display:inline-block;
+    cursor:default;
+    text-align:left;
+    line-height:30px;
+    clear:both;
+    color:#888;
+    min-width: 50px;
+    height: 25px;
+    border: none;
+    background-color: whitesmoke;
+}

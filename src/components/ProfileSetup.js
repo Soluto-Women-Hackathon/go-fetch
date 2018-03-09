@@ -48,7 +48,7 @@ const ProfileSetup = mapProfileProps(({header, button, headerImage, page, pages,
     <div className="profile-setup-page-wrapper" data-page={page} data-pages-length={pages.length}>
       <NextButton text={button} onClick={onClick}/>
       <div className="profile-setup-page">
-          <OwnerProfileBuilder></OwnerProfileBuilder>
+        { Component && <Component /> }
       </div>
     </div>
   </div>
