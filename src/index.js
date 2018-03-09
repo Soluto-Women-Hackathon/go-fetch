@@ -1,26 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {
-  BrowserRouter as Router,
-  Route,
-  Switch,
-} from 'react-router-dom';
-
 import './init-firebase';
 import './index.css';
-import App from './App';
+import Routes from './Routes';
 import registerServiceWorker from './registerServiceWorker';
 
-const NoMatch = () => 'no match :(';
-
-const Main = () => (
-  <Router>
-    <Switch>
-      <Route exact path="/" component={App}/>
-      <Route component={NoMatch}/>
-    </Switch>
-  </Router>
-);
-
-ReactDOM.render(<Main/>, document.getElementById('root'));
+ReactDOM.render(<Routes />, document.getElementById('root'));
 registerServiceWorker();

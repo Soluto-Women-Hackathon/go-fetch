@@ -4,7 +4,7 @@ import './ProfileSetup.css';
 const Header = ({img, text}) => (
   <div className="profile-setup-header">
     <img src={img} />
-    <div>{text}</div>
+    <div className="profile-setup-header-text">{text.split('\n').map(t => <div>{t}</div>)}</div>
   </div>
 );
 
@@ -18,9 +18,9 @@ class ProfileSetup extends Component {
   };
 
   render() {
-    const {pages, headerImage, headerText, onComplete} = this.props;
+    const {pages, headerImage, onComplete} = this.props;
     const {page} = this.state;
-    const isLastPage = (page === pages.length - 1);
+    const isLastPage = (pages.length === 0 || page === pages.length - 1);
     const onClick = () => {
       if (isLastPage) {
         onComplete();
@@ -28,14 +28,18 @@ class ProfileSetup extends Component {
         this.setState({page: page + 1});
       }
     };
-    const CurrentPage = pages[page];
+
+    const { header, Component} = pages[page] || {};
+
     return (
       <div className="profile-setup">
-        <Header text={headerText} img={headerImage}/>
-        <div className="profile-setup-page" data-page={page} data-pages-length={pages.length}>
-          { CurrentPage && <CurrentPage {...this.props} /> }
+        <Header text={header} img={headerImage}/>
+        <div className="profile-setup-page-wrapper" data-page={page} data-pages-length={pages.length}>
+          <NextButton text={isLastPage ? 'Finish' : 'Next'} onClick={onClick}/>
+          <div className="profile-setup-page">
+            { Component && <Component {...this.props} /> }
+          </div>
         </div>
-        <NextButton text={isLastPage ? 'Complete' : 'Next'} onClick={onClick}/>
       </div>
     );
   }
