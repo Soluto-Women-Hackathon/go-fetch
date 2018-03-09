@@ -1,0 +1,78 @@
+.lable-field {
+    width: 59px;
+    height: 13px;
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #bebebe;
+    line-height: 30px;
+}
+
+.input-field {
+    width: 90%;
+    height: 18px;
+    font-family: Roboto;
+    font-size: 15px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #262628;
+}
+
+.profile-wrapper{
+    margin-left: 5px;
+    padding-left: 5px;
+}
+
+input[type=range] {
+    -webkit-appearance: none;
+    -moz-apperance: none;
+    border-radius: 6px;
+    height: 6px;
+
+    background-image: -webkit-gradient(linear,
+    left top,
+    right top,
+    color-stop(15%, #df7164),
+    color-stop(15%, #F5D0CC));
+
+    background-image: -moz-linear-gradient(left center,
+    #DF7164 0%, #DF7164 15%,
+    #F5D0CC 15%, #F5D0CC 100%);
+}
+
+input[type="range"]::-moz-range-track {
+    border: none;
+    background: none;
+    outline: none;
+}
+
+input[type=range]:focus {
+    outline: none;
+    border: none;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none !important;
+    background-color: #df7164;
+    height: 13px;
+    width: 13px;
+    border-radius: 50%;
+}
+
+input[type=range]::-moz-range-thumb {
+    -moz-appearance: none !important;
+    background-color: #df7164;
+    border: none;
+    height: 13px;
+    width: 13px;
+    border-radius: 50%;
+}

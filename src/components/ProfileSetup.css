@@ -50,4 +50,9 @@
   font-family: Fredoka One;
   text-transform: uppercase;
   color: #ffffff;
+
+}
+
+.profile-setup .profile-setup-next:focus {
+  outline: 0;
 }
