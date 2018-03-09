@@ -1,5 +1,26 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  font-family: Fredoka One, sans-serif;
+
+  height: 100vh;
+  overflow-y: auto;
+  background-color: rgba(202, 213, 218, 0.27);
+}
+
+.header {
+  background-image: linear-gradient(to bottom, #00d18b, #00a453);
+  display: flex;
+  flex-direction: column;
+  padding: 50px 0;
+}
+
+.header .header-text {
+  text-align: center;
+  text-transform: uppercase;
+  color: #ffffff;
+  font-size: 22px;
+  line-height: 1.36;
+  letter-spacing: 0.4px;
+  margin-top: 20px;
 }

@@ -1,27 +1,3 @@
-.profile-setup {
-  height: 100vh;
-  overflow-y: auto;
-  background-color: rgba(202, 213, 218, 0.27);
-}
-
-.profile-setup .profile-setup-header {
-  background-image: linear-gradient(to bottom, #00d18b, #00a453);
-  display: flex;
-  flex-direction: column;
-  padding: 50px 0;
-}
-
-.profile-setup .profile-setup-header .profile-setup-header-text {
-  font-family: Fredoka One;
-  text-align: center;
-  text-transform: uppercase;
-  color: #ffffff;
-  font-size: 22px;
-  line-height: 1.36;
-  letter-spacing: 0.4px;
-  margin-top: 20px;
-}
-
 .profile-setup .profile-setup-page-wrapper {
   padding: 0 20px 52px;
   display: flex;
