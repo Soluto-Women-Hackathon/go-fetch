@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import login from '../App';
 import logo from '../resources/logo.svg';
 import forahome_inactive from '../resources/for-a-home-icon-inactive.svg';
 import forahome_active from '../resources/for-a-home-icon-active.svg';
@@ -8,7 +7,6 @@ import toadopt_active from '../resources/to-adopt-icon-active.svg';
 import toadopt_inactive from '../resources/to-adopt-icon-inactive.svg';
 import path from '../resources/path.svg';
 import './Login.css';
-import '../App.css';
 
 class Login extends Component {
     state = {
