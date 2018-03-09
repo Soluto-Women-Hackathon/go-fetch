@@ -1,10 +1,16 @@
-import React, { Component } from 'react';
+import React from 'react';
+import {
+  Redirect,
+  Route,
+  Switch,
+} from 'react-router-dom';
+import { mapProps } from 'recompose';
 import './ProfileSetup.css';
 
 const Header = ({img, text}) => (
   <div className="profile-setup-header">
     <img src={img} />
-    <div className="profile-setup-header-text">{text.split('\n').map(t => <div>{t}</div>)}</div>
+    <div className="profile-setup-header-text">{text.split('\n').map((t, i) => <div key={i}>{t}</div>)}</div>
   </div>
 );
 
@@ -12,37 +18,44 @@ const NextButton = ({text, onClick}) => (
   <button className="profile-setup-next" onClick={onClick}>{text}</button>
 );
 
-class ProfileSetup extends Component {
-  state = {
-    page: 0,
+const mapProfileProps = mapProps(({ pages, onComplete, match: { params }, history, ...props }) => {
+  const page = +(params.page);
+  const isLastPage = (pages.length === 0 || page === pages.length - 1);
+  const onClick = () => {
+    if (isLastPage) {
+      onComplete();
+    } else {
+      history.push('./' + (page + 1));
+    }
   };
+  const { header, Component} = pages[page] || {};
 
-  render() {
-    const {pages, headerImage, onComplete} = this.props;
-    const {page} = this.state;
-    const isLastPage = (pages.length === 0 || page === pages.length - 1);
-    const onClick = () => {
-      if (isLastPage) {
-        onComplete();
-      } else {
-        this.setState({page: page + 1});
-      }
-    };
+  return {
+    page,
+    pages,
+    header,
+    button: isLastPage ? 'Finish' : 'Next',
+    Component,
+    onClick,
+    ...props,
+  };
+});
 
-    const { header, Component} = pages[page] || {};
-
-    return (
-      <div className="profile-setup">
-        <Header text={header} img={headerImage}/>
-        <div className="profile-setup-page-wrapper" data-page={page} data-pages-length={pages.length}>
-          <NextButton text={isLastPage ? 'Finish' : 'Next'} onClick={onClick}/>
-          <div className="profile-setup-page">
-            { Component && <Component {...this.props} /> }
-          </div>
-        </div>
+const ProfileSetup = mapProfileProps(({header, button, headerImage, page, pages, onClick, Component}) => (
+  <div className="profile-setup">
+    <Header text={header} img={headerImage}/>
+    <div className="profile-setup-page-wrapper" data-page={page} data-pages-length={pages.length}>
+      <NextButton text={button} onClick={onClick}/>
+      <div className="profile-setup-page">
+        { Component && <Component /> }
       </div>
-    );
-  }
-}
+    </div>
+  </div>
+));
 
-export default ProfileSetup;
+export default (props) => (
+  <Switch>
+    <Route exact path="/adopt" render={() => <Redirect to="/adopt/0" />}/>
+    <Route path="/adopt/:page" render={(r) => <ProfileSetup {...r} {...props} />}/>
+  </Switch>
+);
