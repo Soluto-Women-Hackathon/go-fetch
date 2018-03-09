@@ -72,9 +72,8 @@
     border:2px solid transparent;
 }
 
-.ChoosePage:checked {
+.ChoosePage:checked  + {
     background-color: #303843;
-    
 }
 
 .User-logins {
@@ -98,6 +97,25 @@
     text-align: center;
     text-decoration: unset;
     color: #303843;
+}
+
+.buttonSquare1 {
+    width: 153px;
+    height: 153px;
+    margin-left: 5px;
+    margin-right: 5px;
+    border-radius: 8px;
+    text-transform: uppercase;
+    background-color: #303843;
+}
+.buttonSquare2 {
+    width: 153px;
+    height: 153px;
+    margin-left: 5px;
+    margin-right: 5px;
+    border-radius: 8px;
+    text-transform: uppercase;
+    background-color: #303843;
 }
 
 .buttonSquare {

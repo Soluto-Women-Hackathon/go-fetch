@@ -7,6 +7,7 @@ import toadopt_active from '../resources/to-adopt-icon-active.svg';
 import toadopt_inactive from '../resources/to-adopt-icon-inactive.svg';
 import path from '../resources/path.svg';
 import './Login.css';
+import { RadioGroup, RadioButton } from 'react-radio-buttons';
 
 class Login extends Component {
     state = {
@@ -26,7 +27,6 @@ class Login extends Component {
                     Get to know your next pet friend
                 </div>
                 <div className="LOOKING">Looking</div>
-            
                 <form className="Page-logins">
                     <div className="buttonSquare">
                         <label className="TO-ADOPT" >
